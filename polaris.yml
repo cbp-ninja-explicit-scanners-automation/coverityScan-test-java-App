@@ -1,22 +1,22 @@
 version: "1"
+serverUrl: https://cloudbees.polaris.synopsys.com
 install:
   coverity:
-    version: latest
+    version: default
 project:
-  name: "Coverity test Java app"
-  branch: "master"
+  name: vulnerable java app
+  branch: master
   revision:
-    name: "insecure-bank"
+    name: java_app"
     date: "2025-07-15T00:00:00Z"
- capture:
-   build:
-     cleanCommands:
+capture:
+  build:
+    cleanCommands:
      - shell: [mvn, -B, -f, pom.xml, clean]
      buildCommands:
      - shell: [mvn, -B, -f, pom.xml, install]
   fileSystem:
     java:
       files:
-        - directory: ${project.projectDir}/src
-
-serverUrl: https://cloudbees.polaris.synopsys.com
+      - directory: ./src
+        
