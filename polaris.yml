@@ -1,22 +1,38 @@
 version: "1"
-serverUrl: https://cloudbees.polaris.synopsys.com
+project:
+  name: java-app
+  branch: master
+  revision:
+  name: master
+  date: "2025-07-15T00:00:00Z"
+capture:
+  #build:
+    # cleanCommands:
+      #- shell: [mvn, -B, -f, pom.xml, clean]
+      #buildCommands:
+      #- shell: [mvn, -B, -f, pom.xml, install]
+    fileSystem:
+      ears:
+        extensions: [ear]
+        files:
+        - directory: ${project.projectDir}
+    java:
+      files:
+      - directory: ${project.projectDir}
+      - excludeRegex: coverityScan-test-java-App|/src/test/
+    wars:
+      extensions: [war]
+      files:
+      - directory: ${project.projectDir}
+analyze:
+   mode: central
+   coverity:
+     caching:
+       jars: disable
+       tu-caching: disable
+       rws: disable
+       pfi: disable
 install:
   coverity:
     version: default
-project:
-  name: vulnerable java app
-  branch: master
-  revision:
-    name: java_app
-    date: "2025-07-15T00:00:00Z"
-capture:
- build:
-     cleanCommands:
-       - shell: [mvn, -B, -f, pom.xml, clean]
-     buildCommands:
-       - shell: [mvn, -B, -f, pom.xml, install]
- fileSystem:
-    java:
-      files:
-        - directory: ./src/main/java/org/hdivsamples/bean
-        
+serverUrl: https://cloudbees.polaris.synopsys.com
