@@ -7,7 +7,7 @@ project:
   name: vulnerable java app
   branch: master
   revision:
-    name: java_app"
+    name: java_app
     date: "2025-07-15T00:00:00Z"
 capture:
   fileSystem:
