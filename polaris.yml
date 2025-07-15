@@ -3,12 +3,11 @@ install:
   coverity:
     version: latest
 project:
-  name: "insecure-bank"
+  name: "Coverity test Java app"
   branch: "origin/master"
   revision:
     name: "insecure-bank"
-    date: "2020-10-01T14:25:30Z"
-  captureDir: .synopsys/polaris
+    date: "2025-07-15T14:25:30Z"
 capture:
   coverity:
     buildless:
