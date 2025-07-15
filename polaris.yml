@@ -4,13 +4,28 @@ install:
     version: latest
 project:
   name: "Coverity test Java app"
-  branch: "origin/master"
+  branch: "master"
   revision:
     name: "insecure-bank"
     date: "2025-07-15T14:25:30Z"
-capture:
+# capture:
+#   coverity:
+#     buildless:
+#       project:
+#         languages:
+#           - "java"
+ capture:
+   build:
+     cleanCommands:
+     - shell: [mvn, -B, -f, pom.xml, clean]
+     buildCommands:
+     - shell: [mvn, -B, -f, pom.xml, install]
+  fileSystem:
+    java:
+      files:
+        - directory: ${project.projectDir}/src
+install:
   coverity:
-    buildless:
-      project:
-        languages:
-          - "java"
+    version: default
+
+serverUrl: https://cloudbees.polaris.synopsys.com
