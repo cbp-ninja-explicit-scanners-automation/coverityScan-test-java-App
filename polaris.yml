@@ -10,11 +10,6 @@ project:
     name: java_app"
     date: "2025-07-15T00:00:00Z"
 capture:
-   build:
-     cleanCommands:
-       - shell: [mvn, -B, -f, pom.xml, clean]
-     buildCommands:
-       - shell: [mvn, -B, -f, pom.xml, install]
   fileSystem:
     java:
       files:
