@@ -7,7 +7,7 @@ project:
   branch: "master"
   revision:
     name: "insecure-bank"
-    date: "2025-07-15T14:25:30Z"
+    date: "2025-07-15T00:00:00Z"
  capture:
    build:
      cleanCommands:
