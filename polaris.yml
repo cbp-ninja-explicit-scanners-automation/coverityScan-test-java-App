@@ -13,5 +13,5 @@ capture:
   fileSystem:
     java:
       files:
-      - directory: ./src
+        - directory: ./src
         
