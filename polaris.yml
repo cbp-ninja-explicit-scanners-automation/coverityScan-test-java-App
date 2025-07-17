@@ -1,6 +1,6 @@
 version: "1"
 project:
-  name: template-java-v2
+  name: coverityScan-test-java-App
   branch: main
   revision:
   name: main
@@ -19,7 +19,7 @@ capture:
     java:
       files:
       - directory: ${project.projectDir}
-      - excludeRegex: template-java-v2|/src/test/
+      - excludeRegex: coverityScan-test-java-App|/src/test/
     wars:
       extensions: [war]
       files:
