@@ -1,10 +1,10 @@
 version: "1"
 project:
-  name: java-app
-  branch: master
+  name: template-java-v2
+  branch: main
   revision:
-  name: master
-  date: "2025-07-15T13:25:30Z"
+  name: main
+  date: ${scm.git.commit.date}
 capture:
   #build:
     # cleanCommands:
@@ -19,7 +19,7 @@ capture:
     java:
       files:
       - directory: ${project.projectDir}
-      - excludeRegex: coverityScan-test-java-App|/src/test/
+      - excludeRegex: template-java-v2|/src/test/
     wars:
       extensions: [war]
       files:
